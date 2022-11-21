@@ -1,5 +1,6 @@
 import os
 import pytest
+from dotenv import load_dotenv
 from utils import attach
 from selene.support.shared import browser
 from appium import webdriver
@@ -7,7 +8,8 @@ from appium.options.android import UiAutomator2Options
 
 
 @pytest.fixture(scope='session', autouse=True)
-def app_management(request):
+def app_management():
+    load_dotenv()
     options = UiAutomator2Options().load_capabilities({
         "platformName": "android",
         "platformVersion": "9.0",

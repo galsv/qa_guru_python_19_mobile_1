@@ -7,7 +7,7 @@ from appium import webdriver
 from appium.options.android import UiAutomator2Options
 
 
-@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope='function', autouse=True)
 def app_management():
     load_dotenv()
     options = UiAutomator2Options().load_capabilities({

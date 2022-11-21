@@ -15,15 +15,15 @@ def app_management():
         "platformVersion": "9.0",
         "deviceName": "Google Pixel 3",
 
-        "app": f"bs://{os.environ('APP_ID')}",
+        "app": f"bs://{os.getenv('APP_ID')}",
 
         'bstack:options': {
             "projectName": "First Python project",
             "buildName": "browserstack-build-1",
             "sessionName": "BStack first_test",
 
-            "userName": f"{os.environ('USER_NAME')}",
-            "accessKey": f"{os.environ('ACCESS_KEY')}"
+            "userName": f"{os.getenv('USER_NAME')}",
+            "accessKey": f"{os.getenv('ACCESS_KEY')}"
         }
     })
 
